@@ -1,0 +1,96 @@
+.compile-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 56px;
+  border: 0;
+  border-radius: var(--radius);
+  background: #14181d;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-lift);
+  transition: transform 0.12s var(--ease), box-shadow 0.2s, background 0.3s, filter 0.2s;
+  overflow: hidden;
+}
+
+.compile-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.compile-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.compile-btn:disabled {
+  cursor: progress;
+  opacity: 0.85;
+}
+
+.compile-btn:focus-visible {
+  outline-offset: 3px;
+}
+
+[data-level='2'] .compile-btn {
+  background: var(--accent);
+}
+
+[data-level='3'] .compile-btn {
+  background: var(--accent-fill);
+}
+
+[data-level='4'] .compile-btn {
+  background: #0b0b0c;
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px #0b0b0c, 4px 4px 0 var(--accent);
+}
+
+[data-level='4'] .compile-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: inset 0 0 0 1px #0b0b0c, 6px 6px 0 var(--accent);
+}
+
+[data-level='5'] .compile-btn {
+  background: var(--accent-fill);
+  background-size: 200% 100%;
+  animation: glow 2.4s ease-in-out infinite, shimmer 4s linear infinite;
+}
+
+/* A sheen that sweeps across on hover at every level. */
+.compile-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease);
+}
+
+.compile-btn:hover:not(:disabled)::after {
+  transform: translateX(100%);
+}
+
+.compile-btn__spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 61, 127, 0.35), 0 14px 34px -12px rgba(255, 61, 127, 0.55); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 61, 127, 0), 0 14px 44px -8px rgba(255, 138, 61, 0.7); }
+}
+
+@keyframes shimmer {
+  from { background-position: 0% 0; }
+  to { background-position: 200% 0; }
+}

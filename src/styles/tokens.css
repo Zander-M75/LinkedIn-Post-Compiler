@@ -1,0 +1,110 @@
+/* Design tokens. Level 1 is the "serious developer tool" baseline;
+   each [data-level] block below overrides only what changes. */
+
+:root {
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-display: var(--font-sans);
+
+  --bg: #eef1f4;
+  --bg-image: none;
+  --surface: #ffffff;
+  --surface-2: #f6f8fa;
+  --ink: #14181d;
+  --ink-2: #4a5461;
+  --ink-3: #7c8794;
+  --line: #dce1e7;
+  --line-strong: #c5ccd5;
+
+  --accent: #2f5d8a;
+  --accent-soft: #e6eef6;
+  --accent-ink: #ffffff;
+  --accent-fill: var(--accent);
+
+  --term-bg: #10141a;
+  --term-line: #232a33;
+  --term-ink: #c9d4e0;
+  --term-dim: #6b7785;
+  --ok: #2e9e6b;
+  --ok-soft: #e7f5ee;
+  --del: #c2413a;
+  --del-soft: #fbecea;
+  --warn: #b7791f;
+
+  --buzz: #fff1c2;
+  --buzz-line: #e6c34a;
+
+  --header-bg: rgba(255, 255, 255, 0.72);
+  --header-ink: var(--ink);
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 2px rgba(20, 24, 29, 0.04), 0 1px 1px rgba(20, 24, 29, 0.03);
+  --shadow-lift: 0 10px 30px -12px rgba(20, 24, 29, 0.18);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* 2 — Corporate: the tool puts on a lanyard. */
+[data-level='2'] {
+  --bg: #ebf0f6;
+  --accent: #0a66c2;
+  --accent-soft: #e3eefa;
+  --line: #d6dfea;
+  --buzz: #dcebfb;
+  --buzz-line: #7fb0e3;
+}
+
+/* 3 — Thought Leader: sunrise gradients and a serif that has read one Seneca quote. */
+[data-level='3'] {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --bg: #f3eef2;
+  --bg-image:
+    radial-gradient(1200px 500px at 85% -10%, rgba(255, 176, 128, 0.28), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(184, 160, 230, 0.22), transparent 60%);
+  --accent: #d4552f;
+  --accent-soft: #fcebe3;
+  --accent-fill: linear-gradient(120deg, #d4552f, #e0932b);
+  --line: #e4dbe0;
+  --buzz: #ffe7d6;
+  --buzz-line: #f0a27f;
+  --header-bg: rgba(255, 250, 247, 0.7);
+}
+
+/* 4 — Founder Mode: black bar, orange, a stealth startup you can’t talk about. */
+[data-level='4'] {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --bg: #f2f1ee;
+  --bg-image: radial-gradient(1000px 420px at 100% 0%, rgba(255, 90, 31, 0.12), transparent 60%);
+  --accent: #ff5a1f;
+  --accent-soft: #ffece3;
+  --accent-ink: #0b0b0c;
+  --accent-fill: #ff5a1f;
+  --line: #e0ddd6;
+  --buzz: #ffe2d4;
+  --buzz-line: #ff8a5c;
+  --header-bg: #0b0b0c;
+  --header-ink: #f4f2ee;
+  --radius: 4px;
+  --radius-sm: 3px;
+}
+
+/* 5 — LinkedIn Psychopath: everything, all at once, tastefully. */
+[data-level='5'] {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --bg: #fbeff3;
+  --bg-image:
+    radial-gradient(900px 500px at 90% -5%, rgba(255, 184, 61, 0.35), transparent 60%),
+    radial-gradient(900px 600px at -5% 30%, rgba(255, 61, 127, 0.22), transparent 60%),
+    radial-gradient(800px 500px at 50% 110%, rgba(61, 169, 255, 0.2), transparent 60%);
+  --accent: #e8336d;
+  --accent-soft: #ffe4ee;
+  --accent-ink: #ffffff;
+  --accent-fill: linear-gradient(110deg, #ff3d7f, #ff8a3d 50%, #ffc53d);
+  --line: #efd7e0;
+  --buzz: #ffe0ec;
+  --buzz-line: #ff7aa6;
+  --header-bg: rgba(255, 246, 250, 0.72);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-lift: 0 18px 40px -14px rgba(232, 51, 109, 0.35);
+}

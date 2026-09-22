@@ -1,0 +1,215 @@
+/* A parody of a professional social post card: recognizable structure, no real branding. */
+
+.li-stage {
+  padding: 20px 16px;
+  background: #f3f2ef;
+}
+
+.li-post {
+  max-width: 540px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e0dfdc;
+  border-radius: 8px;
+  color: #191919;
+  font-family: -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  animation: card-in 0.35s var(--ease);
+}
+
+.li-post__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 12px 0 16px;
+}
+
+.li-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8aa4bf, #3d5a78);
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.li-avatar--sm {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  background: linear-gradient(135deg, #b9b3a6, #6d6658);
+}
+
+.li-post__who {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.li-post__name {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.li-post__verified {
+  color: #1d9bf0;
+}
+
+.li-post__sub {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: #666;
+}
+
+.li-post__follow {
+  border: 0;
+  background: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #0a66c2;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.li-post__follow:hover {
+  background: #eaf2fb;
+}
+
+.li-post__more {
+  color: #666;
+  margin-top: 4px;
+}
+
+.li-post__body {
+  padding: 12px 16px 8px;
+  line-height: 1.45;
+}
+
+.li-post__body p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.li-post__body .buzz {
+  background: transparent;
+  box-shadow: inset 0 -1.5px 0 var(--buzz-line);
+}
+
+.li-post__body .hashtag {
+  color: #0a66c2;
+}
+
+.li-post__see-more {
+  display: block;
+  margin: 2px 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #666;
+  font-size: 14px;
+}
+
+.li-post__see-more:hover {
+  color: #0a66c2;
+  text-decoration: underline;
+}
+
+.li-post__stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 12px;
+  color: #666;
+}
+
+.li-post__reactions {
+  display: inline-flex;
+  align-items: center;
+}
+
+.li-post__emoji {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin-right: -4px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid #fff;
+  font-size: 11px;
+}
+
+.li-post__count {
+  margin-left: 10px;
+}
+
+.li-post__actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 4px 8px;
+}
+
+.li-post__actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: #5e5e5e;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+.li-post__actions button:hover {
+  background: #f2f2f2;
+}
+
+.li-comment {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px 16px;
+  animation: card-in 0.4s var(--ease) 0.5s both;
+}
+
+.li-comment__bubble {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 0 8px 8px 8px;
+  background: #f2f2f2;
+}
+
+.li-comment__bubble p {
+  margin: 6px 0 0;
+}
+
+@media (max-width: 480px) {
+  .li-stage {
+    padding: 12px 8px;
+  }
+  .li-post__actions button {
+    flex-direction: column;
+    gap: 2px;
+    font-size: 11.5px;
+  }
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}

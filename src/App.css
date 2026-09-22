@@ -1,0 +1,10 @@
+/* Layering: ambient level effects sit behind the workspace. */
+.workspace,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.column--output {
+  scroll-margin-top: 110px;
+}
